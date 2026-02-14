@@ -135,9 +135,9 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-chakra-root via-chakra-heart to-chakra-crown animate-pulse" />
-          <span className="font-serif text-xl font-bold tracking-tight">VedaBalance</span>
+        <div className="flex items-center gap-3">
+          <img src="/3ea184ee-79fb-47ef-adf6-f506a10b36a9.png" alt="Mindquest Studios" className="w-10 h-10 object-contain" />
+          <span className="font-serif text-xl font-bold tracking-tight">Mindquest Studios</span>
         </div>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -426,9 +426,9 @@ function Footer() {
     <footer className="bg-background border-t border-border py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-chakra-root via-chakra-heart to-chakra-crown" />
-            <span className="font-serif text-xl font-bold tracking-tight">VedaBalance</span>
+          <div className="flex items-center gap-3">
+            <img src="/3ea184ee-79fb-47ef-adf6-f506a10b36a9.png" alt="Mindquest Studios" className="w-8 h-8 object-contain opacity-80 grayscale hover:grayscale-0 transition-all" />
+            <span className="font-serif text-xl font-bold tracking-tight">Mindquest Studios</span>
           </div>
           
           <div className="flex gap-8 text-sm text-muted-foreground">
@@ -438,7 +438,7 @@ function Footer() {
           </div>
           
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} VedaBalance. All rights reserved.
+            © {new Date().getFullYear()} Mindquest Studios. All rights reserved.
           </p>
         </div>
       </div>
