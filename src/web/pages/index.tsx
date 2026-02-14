@@ -85,50 +85,6 @@ const chakras = [
   },
 ];
 
-const pricingPlans = [
-  {
-    name: "Digital Starter",
-    price: "$29",
-    description: "Begin your journey with the core balancing guides.",
-    features: [
-      "The 7-Day Chakra Guide (PDF)",
-      "Essential Yoga Sequences",
-      "Morning Meditation Audio",
-      "Printable Habit Tracker"
-    ],
-    buttonText: "Start Journey",
-    popular: false
-  },
-  {
-    name: "Full Awakening",
-    price: "$49",
-    description: "Our most popular path to complete energy alignment.",
-    features: [
-      "Everything in Digital Starter",
-      "The Chakra Kitchen Cookbook",
-      "7 Guided Chakra Meditations",
-      "Energy Healing Masterclass",
-      "Lifetime Community Access"
-    ],
-    buttonText: "Awaken Now",
-    popular: true
-  },
-  {
-    name: "Master Alignment",
-    price: "$99",
-    description: "Deep dive with personalized coaching and resources.",
-    features: [
-      "Everything in Full Awakening",
-      "1-on-1 Energy Consultation",
-      "Personalized Dietary Plan",
-      "Advanced Breathwork Series",
-      "Exclusive Retreat Invites"
-    ],
-    buttonText: "Become a Master",
-    popular: false
-  }
-];
-
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -180,7 +136,14 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Badge variant="secondary" className="mb-4 px-4 py-1 text-chakra-thirdeye bg-chakra-thirdeye/10 border-chakra-thirdeye/20">
+              <div className="flex items-center gap-3 mb-6 justify-center lg:justify-start">
+                <img src="/3ea184ee-79fb-47ef-adf6-f506a10b36a9.png" alt="Mindquest Studios" className="w-10 h-10 object-contain" />
+                <div className="flex flex-col">
+                  <span className="font-serif text-sm font-bold tracking-tight leading-none">Mindquest Studios</span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">Holistic Wellness</span>
+                </div>
+              </div>
+              <Badge variant="secondary" className="mb-4 px-4 py-1 text-chakra-thirdeye bg-chakra-thirdeye/10 border-chakra-thirdeye/20 uppercase tracking-wider text-[10px] font-bold">
                 Unlock Your Inner Potential
               </Badge>
               <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6">
@@ -359,63 +322,97 @@ function ChakraGrid() {
 }
 
 function Pricing() {
+  const offer = {
+    name: "The Full Chakra Awakening Bundle",
+    price: "$49",
+    description: "Your complete toolkit for total energetic alignment and spiritual growth in one comprehensive package.",
+    features: [
+      "7-Day Chakra Balancing E-Book",
+      "The Chakra Kitchen Companion Cookbook",
+      "7 Guided Chakra Meditation Audios",
+      "Interactive Chakra Alignment Web App",
+      "Lifetime Access & Future Updates"
+    ],
+    buttonText: "Get the Full Bundle Now"
+  };
+
   return (
     <section id="pricing" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Choose Your Path</h2>
+          <Badge variant="outline" className="mb-4 px-4 py-1 border-chakra-crown text-chakra-crown font-bold">
+            SPECIAL LIMITED TIME OFFER
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Begin Your Transformation</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Invest in your well-being today. All plans include lifetime access.
+            Invest in your holistic well-being today with our most comprehensive collection of resources.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {pricingPlans.map((plan, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative"
-            >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-chakra-crown text-white px-4 py-1 rounded-full text-xs font-bold z-10 shadow-lg uppercase tracking-widest">
-                  Most Transformative
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <Card className="border-chakra-crown border-2 shadow-2xl overflow-hidden bg-background">
+            <div className="grid md:grid-cols-2">
+              <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-chakra-root/5 via-chakra-heart/5 to-chakra-crown/5">
+                <div className="relative mb-8 flex justify-center scale-90 md:scale-100 h-48 items-center">
+                  <div className="absolute inset-0 bg-chakra-crown/5 blur-3xl rounded-full" />
+                  <img src="./guide_cover.png" alt="E-book" className="w-32 md:w-40 h-auto shadow-2xl transform -rotate-6 z-10" />
+                  <img src="./cookbook_cover.png" alt="Cookbook" className="w-32 md:w-40 h-auto shadow-2xl transform rotate-6 -ml-16 mt-8" />
                 </div>
-              )}
-              <Card className={`h-full flex flex-col ${plan.popular ? 'border-chakra-crown border-2 shadow-2xl scale-105 z-10' : 'border-border'}`}>
-                <CardHeader className="text-center pb-2">
-                  <CardTitle className="font-serif text-3xl mb-1">{plan.name}</CardTitle>
-                  <div className="flex items-end justify-center gap-1 mb-2">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground pb-1">once</span>
+                <div className="text-center md:text-left">
+                  <h3 className="text-3xl font-serif font-bold mb-4">{offer.name}</h3>
+                  <div className="flex items-baseline justify-center md:justify-start gap-2 mb-4">
+                    <span className="text-5xl font-bold">{offer.price}</span>
+                    <span className="text-muted-foreground line-through opacity-50">$147 VALUE</span>
                   </div>
-                  <CardDescription>{plan.description}</CardDescription>
-                </CardHeader>
-                <Separator className="mx-8" />
-                <CardContent className="pt-8 flex-grow">
-                  <ul className="space-y-4">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm">
-                        <Check className="w-5 h-5 text-chakra-heart shrink-0 mt-0.5" />
-                        <span>{feature}</span>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {offer.description}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="p-8 md:p-12 flex flex-col justify-between border-t md:border-t-0 md:border-l border-border bg-card">
+                <div>
+                  <h4 className="font-bold text-xs uppercase tracking-[0.2em] mb-6 text-muted-foreground">What's Included:</h4>
+                  <ul className="space-y-4 mb-8">
+                    {offer.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-chakra-heart/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-chakra-heart" />
+                        </div>
+                        <span className="text-sm font-medium">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                </CardContent>
-                <CardFooter className="pb-8">
-                  <Button 
-                    className={`w-full py-6 rounded-full text-lg ${plan.popular ? 'bg-chakra-crown hover:bg-chakra-crown/90' : ''}`}
-                    variant={plan.popular ? 'default' : 'outline'}
-                  >
-                    {plan.buttonText}
+                </div>
+                
+                <div className="space-y-4">
+                  <Button className="w-full py-8 rounded-xl text-xl font-bold bg-chakra-crown hover:bg-chakra-crown/90 text-white shadow-lg shadow-chakra-crown/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                    {offer.buttonText}
                   </Button>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <p className="text-[10px] text-muted-foreground flex items-center gap-1.5 uppercase tracking-wider font-semibold">
+                      <Shield className="w-3 h-3" />
+                      Secure One-Time Payment
+                    </p>
+                    <div className="flex gap-4 opacity-30 grayscale scale-75">
+                      {/* Placeholder for payment icons if needed, but keeping it minimal */}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+          
+          <p className="text-center mt-8 text-muted-foreground text-sm italic">
+            "This bundle completely changed my morning routine and my energy levels have never been higher." 
+            <span className="block not-italic font-bold mt-1 text-foreground">— Sarah J., Wellness Coach</span>
+          </p>
+        </motion.div>
       </div>
     </section>
   );
