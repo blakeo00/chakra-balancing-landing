@@ -1,1 +1,15 @@
-{"id":"fa4ybzp4b88jz5mkztrx5lqjkfhsehvy","name":"Mindquest Studios","description":"A premium chakra balancing journey by Mindquest Studios.","url":"https://example.com","ogImage":"/og-image.png","favicon":"/vite.svg","twitter":{"card":"summary_large_image","site":"@runable"},"themeColor":"#000000","previewPort":4029,"previewUrl":"https://4029-iprqh089y9jhytumi1276.e2b.app"}
+{
+  "id": "fa4ybzp4b88jz5mkztrx5lqjkfhsehvy",
+  "name": "Mindquest Studios",
+  "description": "A comprehensive 7-day journey to realign your body, mind, and spirit through ancient chakra wisdom and modern practice.",
+  "url": "https://mindqueststudios.com",
+  "ogImage": "/og-image.png",
+  "favicon": "/vite.svg",
+  "twitter": {
+    "card": "summary_large_image",
+    "site": "@mindqueststudio"
+  },
+  "themeColor": "#1a1a2e",
+  "previewPort": 4029,
+  "previewUrl": "https://4029-iprqh089y9jhytumi1276.e2b.app"
+}

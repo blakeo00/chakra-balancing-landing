@@ -1,6 +1,14 @@
-import { } from "drizzle-orm/sqlite-core"
+import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
 
 /**
- * You can write your custom database schema here.
- * Use this file for also re-exporting any generated schema for drizzle to generate proper migrations.
+ * Subscribers table for email lead capture.
  */
+export const subscribers = sqliteTable("subscribers", {
+    id: integer("id").primaryKey({ autoIncrement: true }),
+    email: text("email").notNull().unique(),
+    name: text("name"),
+    source: text("source").default("landing-page"),
+    createdAt: text("created_at")
+        .notNull()
+        .$defaultFn(() => new Date().toISOString()),
+});
