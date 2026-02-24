@@ -46,28 +46,27 @@ export function About() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative"
                     >
-                        <div className="aspect-square max-w-md mx-auto relative">
-                            {/* Decorative chakra rings */}
-                            <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="max-w-md mx-auto relative group">
+                            {/* Outer glow */}
+                            <div className="absolute -inset-4 bg-gradient-to-br from-chakra-root/20 via-chakra-heart/20 to-chakra-crown/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700 opacity-80" />
+
+                            {/* Decorative chakra rings behind the image */}
+                            <div className="absolute inset-0 flex items-center justify-center -z-0">
                                 {[
-                                    "border-chakra-root/30",
-                                    "border-chakra-sacral/25",
-                                    "border-chakra-solar/20",
-                                    "border-chakra-heart/25",
-                                    "border-chakra-throat/20",
-                                    "border-chakra-thirdeye/25",
-                                    "border-chakra-crown/30",
+                                    "border-chakra-root/20",
+                                    "border-chakra-heart/15",
+                                    "border-chakra-crown/20",
                                 ].map((borderColor, i) => (
                                     <motion.div
                                         key={i}
-                                        className={`absolute rounded-full border-2 ${borderColor}`}
+                                        className={`absolute rounded-full border ${borderColor}`}
                                         style={{
-                                            width: `${(i + 1) * 14}%`,
-                                            height: `${(i + 1) * 14}%`,
+                                            width: `${100 + (i + 1) * 15}%`,
+                                            height: `${100 + (i + 1) * 15}%`,
                                         }}
                                         animate={{ rotate: i % 2 === 0 ? 360 : -360 }}
                                         transition={{
-                                            duration: 30 + i * 5,
+                                            duration: 40 + i * 10,
                                             repeat: Infinity,
                                             ease: "linear",
                                         }}
@@ -75,14 +74,19 @@ export function About() {
                                 ))}
                             </div>
 
-                            {/* Center icon */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-chakra-root via-chakra-heart to-chakra-crown flex items-center justify-center shadow-2xl">
+                            {/* Sassy image */}
+                            <div className="relative z-10">
+                                <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
                                     <img
-                                        src="/3ea184ee-79fb-47ef-adf6-f506a10b36a9.png"
-                                        alt="Mindquest Studios"
-                                        className="w-16 h-16 object-contain"
+                                        src="/sassy-chakra.jpg"
+                                        alt="Sassy — Chief Zen Master, Mindquest Studios"
+                                        className="w-full h-auto"
                                     />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                                        <p className="text-lg font-bold text-white drop-shadow-lg font-serif">Sassy</p>
+                                        <p className="text-xs uppercase tracking-[0.25em] text-white/80 font-sans mt-1">Chief Zen Master</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -55,16 +55,30 @@ export function Hero() {
                         >
                             <div className="relative group">
                                 <div className="absolute -inset-4 bg-gradient-to-tr from-chakra-root/20 via-chakra-heart/20 to-chakra-crown/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
-                                <div className="relative flex gap-4 md:gap-8 items-end">
+                                <div className="relative flex gap-4 md:gap-6 items-end justify-center">
                                     <motion.div
                                         whileHover={{ y: -10 }}
-                                        className="w-48 md:w-64 glass rounded-xl overflow-hidden transform -rotate-6"
+                                        className="w-36 md:w-48 glass rounded-xl overflow-hidden transform -rotate-6"
                                     >
                                         <img src="./guide_cover.png" alt="Program Guide" className="w-full h-auto" />
                                     </motion.div>
                                     <motion.div
+                                        whileHover={{ y: -10, scale: 1.03 }}
+                                        className="relative w-44 md:w-56 z-10 -mt-4"
+                                    >
+                                        <div className="absolute -inset-3 bg-gradient-to-br from-chakra-solar/40 via-chakra-heart/30 to-chakra-crown/40 rounded-full blur-xl animate-pulse" />
+                                        <div className="relative glass rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+                                            <img src="/sassy-meditation.jpg" alt="Sassy — Chief Zen Master" className="w-full h-auto" />
+                                        </div>
+                                        <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                            <span className="px-4 py-1.5 text-[10px] uppercase tracking-[0.2em] font-bold bg-gradient-to-r from-chakra-solar to-chakra-crown text-white rounded-full shadow-lg font-sans">
+                                                ✨ Sassy — Chief Zen Master ✨
+                                            </span>
+                                        </div>
+                                    </motion.div>
+                                    <motion.div
                                         whileHover={{ y: -10 }}
-                                        className="w-48 md:w-64 glass rounded-xl overflow-hidden transform rotate-6"
+                                        className="w-36 md:w-48 glass rounded-xl overflow-hidden transform rotate-6"
                                     >
                                         <img src="./cookbook_cover.png" alt="Cookbook Cover" className="w-full h-auto" />
                                     </motion.div>
